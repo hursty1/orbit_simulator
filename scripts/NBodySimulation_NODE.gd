@@ -1,6 +1,6 @@
 extends Node3D
 
-class_name NBodySimulation
+#class_name NBodySimulation
 
 
 var bodies : Array

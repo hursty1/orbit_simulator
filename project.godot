@@ -23,6 +23,10 @@ Draw3d="*res://scripts/Draw3d.gd"
 
 project/assembly_name="gavity"
 
+[editor]
+
+movie_writer/movie_file="example"
+
 [physics]
 
 3d/default_gravity=0.0

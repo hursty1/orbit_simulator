@@ -17,6 +17,12 @@ func _init(): #called when game starts reguardless of if this item is loaded
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("CelestialBody")
+	var unique_mesh = $MeshInstance3D.mesh.duplicate()
+	unique_mesh.radius = self.radius
+	unique_mesh.height = self.radius  # Only needed if it's a CylinderMesh
+	$MeshInstance3D.mesh = unique_mesh
+	print(self.name)
+	print(self.radius)
 #	rb.mass = mass
 	velocity = initalVelocity
 	mass = surfaceGravity * radius * radius / Constants.gravitationalConstant
