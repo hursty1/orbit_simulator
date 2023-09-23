@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3lj6ulf6v4b6"]
+
+[ext_resource type="Script" path="res://scenes/simulation2d.gd" id="1_opssv"]
+[ext_resource type="PackedScene" uid="uid://cxuwwl54hvk5t" path="res://scenes/celestial_body_2d.tscn" id="2_hg3di"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_opssv")
+use_physics_time_step = true
+
+[node name="sun" parent="." instance=ExtResource("2_hg3di")]
+radius = 100.0
+surfaceGravity = 22.0
+
+[node name="Line2D" type="Line2D" parent="sun"]
+default_color = Color(0.894118, 0.862745, 0, 1)
+
+[node name="CelestialBody2d2" parent="." instance=ExtResource("2_hg3di")]
+position = Vector2(377.475, 0)
+rotation = 0.0174533
+radius = 45.0
+surfaceGravity = 1.0
+initalVelocity = Vector2(0, 11.62)
+
+[node name="Line2D" type="Line2D" parent="CelestialBody2d2"]
+default_color = Color(1, 0.329412, 0.662745, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(4, 10)
+zoom = Vector2(0.5, 0.5)

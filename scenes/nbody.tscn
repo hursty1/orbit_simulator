@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn6pt4imdwln5"]
+
+[ext_resource type="Script" path="res://scripts/NBodySimulation_NODE.gd" id="1_pyu4s"]
+[ext_resource type="PackedScene" uid="uid://b1hbndcikssd1" path="res://scenes/celestial_body.tscn" id="2_fmc13"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30896, 0, 0.318804)
+script = ExtResource("1_pyu4s")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.7735, 82.4836)
+
+[node name="CelestialBody" parent="." instance=ExtResource("2_fmc13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.895, 0, 0)
+initalVelocity = Vector3(0, 107.7, 0)
+bodyName = "moon"
+mass = 1.0
+
+[node name="CelestialBody2" parent="." instance=ExtResource("2_fmc13")]
+bodyName = "planet"
+mass = 10000.0

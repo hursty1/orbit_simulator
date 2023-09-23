@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://crulsityqwqpq"]
+
+[ext_resource type="Script" path="res://scenes/simulation.gd" id="1_bh0ov"]
+[ext_resource type="PackedScene" uid="uid://dejnmsdx87c6q" path="res://scenes/celestial_body_node3d.tscn" id="2_jsegd"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_bh0ov")
+num_steps = 1000
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Sun" parent="." instance=ExtResource("2_jsegd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.23969, 0)
+radius = 100.0
+surfaceGravity = 10.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.978487, 0.206307, 0, -0.206307, 0.978487, 0, 20.8267, 793.007)
+
+[node name="Moon" parent="." instance=ExtResource("2_jsegd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.952, 0, 0)
+radius = 41.005
+surfaceGravity = 8.0
+initalVelocity = Vector3(0, 24.545, 0)

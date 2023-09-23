@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dejnmsdx87c6q"]
+
+[ext_resource type="Script" path="res://scenes/celestial_body_node3d.gd" id="1_vp5bs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vts2w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6nl86"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfs6l"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_alxnd"]
+material = SubResource("StandardMaterial3D_yfs6l")
+radius = 3.47
+height = 4.96
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_vp5bs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vts2w")
+material_overlay = SubResource("StandardMaterial3D_6nl86")
+mesh = SubResource("SphereMesh_alxnd")

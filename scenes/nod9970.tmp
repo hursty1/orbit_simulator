@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://tkoapf21xxe2"]
+
+[ext_resource type="Script" path="res://scenes/simulation.gd" id="1_usuto"]
+[ext_resource type="PackedScene" uid="uid://cxuwwl54hvk5t" path="res://scenes/celestial_body_2d.tscn" id="2_7i4y6"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_usuto")
+
+[node name="CelestialBody2d" parent="." instance=ExtResource("2_7i4y6")]
